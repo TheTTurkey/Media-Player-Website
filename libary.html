@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav id="nav_bar">
+        <span id="title">Turkey Music</span>
+        <ul id="nav_bar_list">
+            <li class="list_item"><button>Library</button></li>
+            <li class="list_item"><button>Playlist</button></li>
+        </ul>
+    </nav>
+    
+    <audio id="audio_player" type="audio/*">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="main">
+        <input type="file" id="music_upload">
+        <h1>Music Library</h1>
+        <div>
+            <button id="music_upload_button">music upload</button>
+        </div>
+    </div>
+
+    <!-- <input type="file" id="music_upload" accept="audio/*"> -->
+    <div id="audio_box">
+        <span id="music_upload_label"></span>
+        <button id="play_button">Play</button>
+        <span id="current_time" class="time">0:00</span>
+        <p id="slash">/</p>
+        <span id="duration" class="time">0:00</span>
+        <input type="range" id="progress_bar" max="100" value="0">   
+        <output id="volume_output">50</output>
+        <input type="range" id="volume_control" max="100" value="50">
+    </div>
+    
+</body>
+</html>

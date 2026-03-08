@@ -1,0 +1,91 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#music_upload_label{
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  border: none;
+  font-size: 16px;
+}
+#music_upload{
+    display: none;
+}
+#audio_box {
+    display: flex;
+    border: 2px solid black;
+    padding: 20px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+  } 
+
+#play_button {
+    background-color: lightgray;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+#play_button:hover {
+    background-color: gray;
+    color: white;
+  }
+
+#slash {
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+.time {
+    padding: 10px;
+  }
+
+#nav_bar_list {
+    display: inline-flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    margin: 0 10px;
+    float: left;
+}
+
+li button{
+  display: block; 
+  background-color: lightgray;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none; 
+}
+
+li button:hover {
+  background-color: gray;
+  color: white;
+}
+
+#nav_bar {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+#main {
+    margin-top: 70px; 
+    background: #eee;
+    height: 100%;
+}
