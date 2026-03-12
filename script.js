@@ -14,7 +14,7 @@ const library_button = document.getElementById('lib_link');
 const playlist_button = document.getElementById('pla_link');
 
 
-// Library and Playlist Show and Hide Functionality
+
 library_button.addEventListener('click', () => {
         library.style.display = "block"; 
         playlist.style.display = "none";
@@ -27,12 +27,6 @@ playlist_button.addEventListener('click', () => {
 
 
 
-
-
-
-
-
-// Audio Player Funtioncionality
 audio_upload.addEventListener('change', () => {
     const file = audio_upload.files[0];
     const url = URL.createObjectURL(file);
