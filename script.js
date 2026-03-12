@@ -8,7 +8,31 @@ const current_time = document.getElementById('current_time');
 const duration = document.getElementById('duration');
 const audio_upload_button = document.getElementById('music_upload_button');
 const audio_upload_label = document.getElementById('music_upload_label');
+const library = document.getElementById('Library');
+const playlist = document.getElementById('Playlist');
+const library_button = document.getElementById('lib_link');
+const playlist_button = document.getElementById('pla_link');
 
+
+// Library and Playlist Show and Hide Functionality
+library_button.addEventListener('click', () => {
+        library.style.display = "block"; 
+        playlist.style.display = "none";
+});
+
+playlist_button.addEventListener('click', () => {
+        playlist.style.display = "block"; 
+        library.style.display = "none";
+});
+
+
+
+
+
+
+
+
+// Audio Player Funtioncionality
 audio_upload.addEventListener('change', () => {
     const file = audio_upload.files[0];
     const url = URL.createObjectURL(file);

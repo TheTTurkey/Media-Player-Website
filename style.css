@@ -89,3 +89,11 @@ li button:hover {
     background: #eee;
     height: 100%;
 }
+
+#Library{
+
+}
+
+#Playlist{
+  display: none;
+}
