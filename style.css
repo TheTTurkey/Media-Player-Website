@@ -96,6 +96,7 @@ li button:hover {
 
 #Playlist{
   display: none;
+  height: 100%;
 }
 
 #About{
