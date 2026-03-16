@@ -63,22 +63,23 @@ li {
 }
 
 li button{
+  border: white solid 2px;
+  border-radius: 5px;
   display: block; 
-  background-color: lightgray;
+  background-color: #C9BEFF;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 20px;
   text-decoration: none; 
 }
 
 li button:hover {
-  background-color: gray;
-  color: white;
+  background-color: #FFDBFD;
 }
 
 #nav_bar {
-    background-color: black;
+    background-color: #6367FF;
     color: white;
-    padding: 10px;
+    padding: 1.66%;
     position: fixed;
     top: 0;
     width: 100%;
@@ -87,7 +88,7 @@ li button:hover {
 
 #main {
     margin-top: 70px; 
-    background: #eee;
+    background: #8494FF;
     height: 100%;
 }
 
@@ -101,6 +102,6 @@ li button:hover {
 }
 
 #About{
-  display: none;
   height: 100%;
-}
+  display: none;
+} 
