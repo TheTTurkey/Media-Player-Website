@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
@@ -7,16 +8,16 @@
     <title>Turkey Media Player</title>
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <nav id="nav_bar">
-        <span id="title">  Turkey Music </span>
+        <span id="title"> Turkey Music </span>
         <ul id="nav_bar_list">
             <li class="list_item"><button id="lib_link">Library</button></li>
             <li class="list_item"><button id="pla_link">Playlist</button></li>
             <li class="list_item"><button id="abo_link">About</button></li>
         </ul>
     </nav>
-
 
 
 
@@ -36,12 +37,15 @@
 
 
     <div id="About">
-   
+
         <div id="main">
             <input type="file" id="music_upload">
             <h1>About</h1>
             <div>
-                <p>Turkey Music is a simple music player built with HTML, CSS, and JavaScript. It allows users to upload their own music files and create playlists. The player features basic controls such as play, pause, and volume adjustment. The design is clean and user-friendly, making it easy for anyone to enjoy their music collection.</p>
+                <p>Turkey Music is a simple music player built with HTML, CSS, and JavaScript. It allows users to upload
+                    their own music files and create playlists. The player features basic controls such as play, pause,
+                    and volume adjustment. The design is clean and user-friendly, making it easy for anyone to enjoy
+                    their music collection.</p>
             </div>
         </div>
     </div>
@@ -58,7 +62,7 @@
     </div>
 
 
-    
+
 
     <div id="audio_box">
         <span id="music_upload_label"></span>
@@ -66,10 +70,11 @@
         <span id="current_time" class="time">0:00</span>
         <p id="slash">/</p>
         <span id="duration" class="time">0:00</span>
-        <input type="range" id="progress_bar" max="100" value="0">   
+        <input type="range" id="progress_bar" max="100" value="0">
         <output id="volume_output">50</output>
         <input type="range" id="volume_control" max="100" value="50">
     </div>
-    
+
 </body>
+
 </html>

@@ -22,21 +22,21 @@ const request = window.indexedDB.open("Music", 3);
 
 
 library_button.addEventListener('click', () => {
-        library.style.display = "block"; 
-        playlist.style.display = "none";
-        about.style.display = "none";
+    library.style.display = "block";
+    playlist.style.display = "none";
+    about.style.display = "none";
 });
 
 playlist_button.addEventListener('click', () => {
-        playlist.style.display = "block"; 
-        library.style.display = "none";
-        about.style.display = "none";
+    playlist.style.display = "block";
+    library.style.display = "none";
+    about.style.display = "none";
 });
 
 about_button.addEventListener('click', () => {
-        about.style.display = "block"; 
-        playlist.style.display = "none";
-        library.style.display = "none";
+    about.style.display = "block";
+    playlist.style.display = "none";
+    library.style.display = "none";
 });
 
 
@@ -83,7 +83,7 @@ const formatTime = (seconds) => {
 audioplayer.addEventListener('timeupdate', () => {
     const progress = (audioplayer.currentTime / audioplayer.duration) * 100;
     progress_bar.value = progress;
-    current_time.textContent = formatTime(audioplayer.currentTime); 
+    current_time.textContent = formatTime(audioplayer.currentTime);
 });
 
 audio_upload_button.addEventListener('click', () => {
