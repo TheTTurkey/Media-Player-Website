@@ -22,6 +22,7 @@ html, body {
     justify-content: center;
     position: fixed;
     bottom: 0;
+    background-color: white;
   } 
 
 #play_button {
@@ -91,7 +92,7 @@ li button:hover {
 }
 
 #Library{
-
+  height: 100%;
 }
 
 #Playlist{
@@ -101,4 +102,5 @@ li button:hover {
 
 #About{
   display: none;
+  height: 100%;
 }
