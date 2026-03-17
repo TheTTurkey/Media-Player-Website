@@ -33,6 +33,7 @@ body {
   background: #161B22;
   box-sizing: border-box;
   gap: 5px;
+  flex-wrap: wrap;
 }
 
 #play_button {
@@ -67,14 +68,16 @@ body {
 #nav_bar_list {
   display: inline-flex;
   list-style-type: none;
-  margin: 0;
+  margin: 0px;
   padding: 0;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 li {
-  margin: 0 10px;
+  margin: 0 5px;
   float: left;
 }
 
@@ -111,6 +114,7 @@ li button:hover {
   font-weight: bold;
   font-size: 20px;
   color: #2e87e0;
+  margin: 20px;
 }
 
 #main {
