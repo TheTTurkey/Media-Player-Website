@@ -59,11 +59,19 @@ play_button.addEventListener('click', () => {
     }
 });
 
+const updateSliderTrail = (slider) => {
+    const percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
+    slider.style.background = `linear-gradient(to right, #58A6FF ${percent}%, #30363D ${percent}%)`;
+};
+
 volume_control.addEventListener('input', () => {
     const volume = volume_control.value / 100;
     audioplayer.volume = volume;
     volume_output.value = volume_control.value;
+    updateSliderTrail(volume_control);
 });
+
+updateSliderTrail(volume_control);
 
 audioplayer.addEventListener('loadedmetadata', () => {
     progress_bar.value = Math.floor(audioplayer.duration);
@@ -72,6 +80,7 @@ audioplayer.addEventListener('loadedmetadata', () => {
 
 progress_bar.addEventListener('input', () => {
     audioplayer.currentTime = progress_bar.value;
+    updateSliderTrail(progress_bar);
 });
 
 const formatTime = (seconds) => {
@@ -84,6 +93,7 @@ audioplayer.addEventListener('timeupdate', () => {
     const progress = (audioplayer.currentTime / audioplayer.duration) * 100;
     progress_bar.value = progress;
     current_time.textContent = formatTime(audioplayer.currentTime);
+    updateSliderTrail(progress_bar);
 });
 
 audio_upload_button.addEventListener('click', () => {
