@@ -15,7 +15,7 @@ const playlist_button = document.getElementById('pla_link');
 const about_button = document.getElementById('abo_link');
 const about = document.getElementById('About');
 
-const request = window.indexedDB.open("Music", 3);
+const db = new Dexie("Music");
 
 
 
