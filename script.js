@@ -17,6 +17,10 @@ const about = document.getElementById('About');
 
 const db = new Dexie("Music");
 
+db.version(1).stores({
+    songs: "++id, name"
+});
+
 
 
 
