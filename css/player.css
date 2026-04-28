@@ -20,6 +20,7 @@
   box-sizing: border-box;
   gap: 5px;
   flex-wrap: wrap;
+  z-index: 10;
 }
 
 #play_button {
