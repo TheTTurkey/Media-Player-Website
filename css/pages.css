@@ -39,6 +39,159 @@
   height: 100%;
 }
 
+#music_list_div {
+  padding: 0 20px 20px;
+}
+
+#music_table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #161B22;
+  border: 1px solid #30363D;
+  border-radius: 8px;
+  overflow: hidden;
+  display: none;
+}
+
+#music_table.has-songs {
+  display: table;
+}
+
+#music_table thead tr {
+  background: #21262D;
+}
+
+#music_table th {
+  color: #8B949E;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #30363D;
+}
+
+#music_table th.col-icon {
+  width: 48px;
+}
+
+#music_table th.col-duration {
+  width: 90px;
+  text-align: center;
+}
+
+#music_table th.col-action {
+  width: 80px;
+  text-align: center;
+}
+
+.music-row {
+  transition: background 0.2s ease;
+}
+
+.music-row:hover {
+  background: #1C2129;
+}
+
+.music-row.active {
+  background: rgba(88, 166, 255, 0.08);
+}
+
+.music-row td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #21262D;
+  color: #C9D1D9;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.music-row td.col-icon {
+  text-align: center;
+}
+
+.music-row td.col-icon svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.music-row td.col-name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
+}
+
+.music-row td.col-duration {
+  text-align: center;
+  color: #8B949E;
+  font-variant-numeric: tabular-nums;
+}
+
+.music-row td.col-action {
+  text-align: center;
+}
+
+.play-song-btn {
+  background: transparent;
+  border: 1.5px solid #58A6FF;
+  color: #58A6FF;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.play-song-btn:hover {
+  background: #58A6FF;
+  color: #0D1117;
+}
+
+.music-row.active .play-song-btn {
+  background: #58A6FF;
+  color: #0D1117;
+}
+
+.music-row td.col-action {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-song-btn {
+  background: transparent;
+  border: 1.5px solid #f85149;
+  color: #f85149;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.delete-song-btn:hover {
+  background: #f85149;
+  color: #0D1117;
+}
+
+.music-row:last-child td {
+  border-bottom: none;
+}
+
 #playlist {
   display: none;
   height: 100%;
