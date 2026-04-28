@@ -25,7 +25,7 @@ async function storeMp3(title, file, fileDuration) {
     return id;
 }
 
-
+// SVG music note icon
 const MUSIC_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#58A6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`;
 
 function addSongToList(id, title, songDuration) {
@@ -41,22 +41,27 @@ function addSongToList(id, title, songDuration) {
         </td>
     `;
 
+    // Wire up the play button
     row.querySelector('.play-song-btn').addEventListener('click', () => {
         playSong(id, title);
     });
 
+    // Wire up the delete button
     row.querySelector('.delete-song-btn').addEventListener('click', async () => {
         await deleteSong(id, row);
     });
 
     music_list.appendChild(row);
 
+    // Show the table now that it has content
     document.getElementById('music_table').classList.add('has-songs');
 }
 
 async function deleteSong(id, row) {
+    // Remove from IndexedDB
     await db.songs.delete(id);
 
+    // If this song is currently playing, stop it
     const playBtn = row.querySelector('.play-song-btn');
     if (row.classList.contains('active')) {
         audio_player.pause();
@@ -69,10 +74,12 @@ async function deleteSong(id, row) {
         update_slider_trail(progress_bar);
     }
 
+    // Remove the row with a fade-out
     row.style.transition = 'opacity 0.3s ease';
     row.style.opacity = '0';
     setTimeout(() => {
         row.remove();
+        // Hide the table if no songs left
         if (music_list.children.length === 0) {
             document.getElementById('music_table').classList.remove('has-songs');
         }
@@ -107,6 +114,7 @@ async function playSong(id, title) {
         audio_upload_label.textContent = title || song.title;
         play_button.textContent = 'Pause';
 
+        // Highlight active row
         document.querySelectorAll('.music-row').forEach(r => r.classList.remove('active'));
         const btn = document.querySelector(`.play-song-btn[data-id="${id}"]`);
         if (btn) btn.closest('tr').classList.add('active');
@@ -119,6 +127,7 @@ const format_time = (seconds) => {
     return `${min}:${sec}`;
 };
 
+// Load existing songs from DB on page load
 async function loadSongsFromDB() {
     const songs = await db.songs.toArray();
     for (const song of songs) {
@@ -135,12 +144,16 @@ audio_upload.addEventListener('change', async () => {
         const fullName = file.name;
         const nameWithoutExt = fullName.replace(/\.[^/.]+$/, "");
 
+        // Get the duration before storing
         const fileDuration = await getDuration(file);
 
+        // Store in DB
         const id = await storeMp3(nameWithoutExt, file, fileDuration);
 
+        // Add to the list
         addSongToList(id, nameWithoutExt, format_time(fileDuration));
 
+        // Also load it into the player
         const url = URL.createObjectURL(file);
         audio_player.src = url;
         audio_upload_label.textContent = nameWithoutExt;
