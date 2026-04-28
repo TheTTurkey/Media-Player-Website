@@ -1,4 +1,4 @@
-const audioplayer = document.getElementById('audio_player');
+const audio_player = document.getElementById('audio_player');
 const audio_upload = document.getElementById('music_upload');
 const play_button = document.getElementById('play_button');
 const volume_control = document.getElementById('volume_control');
@@ -22,56 +22,56 @@ db.version(1).stores({
 audio_upload.addEventListener('change', () => {
     const file = audio_upload.files[0];
     const url = URL.createObjectURL(file);
-    audioplayer.src = url;
+    audio_player.src = url;
 });
 
 play_button.addEventListener('click', () => {
-    if (audioplayer.src) {
-        if (audioplayer.paused) {
-            audioplayer.play();
+    if (audio_player.src) {
+        if (audio_player.paused) {
+            audio_player.play();
             play_button.textContent = 'Pause';
         } else {
-            audioplayer.pause();
+            audio_player.pause();
             play_button.textContent = 'Play';
         }
     }
 });
 
-const updateSliderTrail = (slider) => {
+const update_slider_trail = (slider) => {
     const percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
     slider.style.background = `linear-gradient(to right, #58A6FF ${percent}%, #30363D ${percent}%)`;
 };
 
 volume_control.addEventListener('input', () => {
     const volume = volume_control.value / 100;
-    audioplayer.volume = volume;
+    audio_player.volume = volume;
     volume_output.value = volume_control.value;
-    updateSliderTrail(volume_control);
+    update_slider_trail(volume_control);
 });
 
-updateSliderTrail(volume_control);
+update_slider_trail(volume_control);
 
-audioplayer.addEventListener('loadedmetadata', () => {
-    progress_bar.value = Math.floor(audioplayer.duration);
-    duration.textContent = formatTime(audioplayer.duration);
+audio_player.addEventListener('loadedmetadata', () => {
+    progress_bar.value = Math.floor(audio_player.duration);
+    duration.textContent = format_time(audio_player.duration);
 });
 
 progress_bar.addEventListener('input', () => {
-    audioplayer.currentTime = progress_bar.value;
-    updateSliderTrail(progress_bar);
+    audio_player.currentTime = progress_bar.value;
+    update_slider_trail(progress_bar);
 });
 
-const formatTime = (seconds) => {
+const format_time = (seconds) => {
     const min = Math.floor(seconds / 60);
     const sec = Math.floor(seconds % 60).toString().padStart(2, '0');
     return `${min}:${sec}`;
 };
 
-audioplayer.addEventListener('timeupdate', () => {
-    const progress = (audioplayer.currentTime / audioplayer.duration) * 100;
+audio_player.addEventListener('timeupdate', () => {
+    const progress = (audio_player.currentTime / audio_player.duration) * 100;
     progress_bar.value = progress;
-    current_time.textContent = formatTime(audioplayer.currentTime);
-    updateSliderTrail(progress_bar);
+    current_time.textContent = format_time(audio_player.currentTime);
+    update_slider_trail(progress_bar);
 });
 
 audio_upload_button.addEventListener('click', () => {

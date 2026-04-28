@@ -35,16 +35,16 @@
   color: #F0F6FC;
 }
 
-#Library {
+#library {
   height: 100%;
 }
 
-#Playlist {
+#playlist {
   display: none;
   height: 100%;
 }
 
-#About {
+#about {
   height: 100%;
   display: none;
 }

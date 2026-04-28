@@ -1,9 +1,9 @@
-const library = document.getElementById('Library');
-const playlist = document.getElementById('Playlist');
+const library = document.getElementById('library');
+const playlist = document.getElementById('playlist');
 const library_button = document.getElementById('lib_link');
 const playlist_button = document.getElementById('pla_link');
 const about_button = document.getElementById('abo_link');
-const about = document.getElementById('About');
+const about = document.getElementById('about');
 
 
 
