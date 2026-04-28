@@ -9,14 +9,30 @@ const duration = document.getElementById('duration');
 const audio_upload_button = document.getElementById('music_upload_button');
 const audio_upload_label = document.getElementById('music_upload_label');
 
-const db = new Dexie("Music");
+const db = new Dexie("music");
 
 db.version(1).stores({
-    songs: "++id, name"
+    songs: "++id, title"
 });
 
+async function storeMp3(title, file) {
+    await db.songs.add({
+        title: title,
+        mp3Blob: file
+    });
+}
 
-
+async function playSong(id) {
+    const song = await db.songs.get(id);
+    if (song) {
+        if (audio_player.src) {
+            URL.revokeObjectURL(audio_player.src);
+        }
+        const audioUrl = URL.createObjectURL(song.mp3Blob);
+        audio_player.src = audioUrl;
+        audio_player.play();
+    }
+}
 
 
 audio_upload.addEventListener('change', () => {
