@@ -60,3 +60,10 @@
 .about-carousel {
   flex: 1 1 300px;
 }
+
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+  width: 800px;
+  border-radius: 10px;
+}
