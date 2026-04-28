@@ -1,0 +1,50 @@
+#main {
+  margin-top: 70px;
+  height: 100%;
+  padding-bottom: 80px;
+}
+
+#main h1 {
+  color: #F0F6FC;
+  padding: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#main p {
+  color: #F0F6FC;
+  padding: 0 20px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#music_upload_button {
+  background-color: #21262D;
+  color: #F0F6FC;
+  border: 2px solid #30363D;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#music_upload_button:hover {
+  background-color: #30363D;
+  color: #F0F6FC;
+}
+
+#Library {
+  height: 100%;
+}
+
+#Playlist {
+  display: none;
+  height: 100%;
+}
+
+#About {
+  height: 100%;
+  display: none;
+}
