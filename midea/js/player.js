@@ -26,7 +26,10 @@ async function storeMp3(title, file, fileDuration) {
 }
 
 
-const MUSIC_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#58A6FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`;
+const PLAY_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
+const PAUSE_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>`;
+
+const MUSIC_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#63B3ED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`;
 
 function addSongToList(id, title, songDuration) {
     const row = document.createElement('tr');
@@ -53,8 +56,11 @@ function addSongToList(id, title, songDuration) {
 
     music_list.appendChild(row);
 
-
     document.getElementById('music_table').classList.add('has-songs');
+
+
+    const emptyState = document.getElementById('library_empty_state');
+    if (emptyState) emptyState.style.display = 'none';
 }
 
 async function deleteSong(id, row) {
@@ -67,7 +73,8 @@ async function deleteSong(id, row) {
         audio_player.pause();
         audio_player.removeAttribute('src');
         audio_upload_label.textContent = '';
-        play_button.textContent = 'Play';
+        play_button.innerHTML = PLAY_SVG;
+        play_button.classList.remove('playing');
         duration.textContent = '0:00';
         current_time.textContent = '0:00';
         progress_bar.value = 0;
@@ -82,6 +89,8 @@ async function deleteSong(id, row) {
 
         if (music_list.children.length === 0) {
             document.getElementById('music_table').classList.remove('has-songs');
+            const emptyState = document.getElementById('library_empty_state');
+            if (emptyState) emptyState.style.display = '';
         }
     }, 300);
 }
@@ -112,7 +121,8 @@ async function playSong(id, title) {
         audio_player.src = audioUrl;
         audio_player.play();
         audio_upload_label.textContent = title || song.title;
-        play_button.textContent = 'Pause';
+        play_button.innerHTML = PAUSE_SVG;
+        play_button.classList.add('playing');
 
         document.querySelectorAll('.music-row').forEach(r => r.classList.remove('active'));
         const btn = document.querySelector(`.play-song-btn[data-id="${id}"]`);
@@ -158,17 +168,19 @@ play_button.addEventListener('click', () => {
     if (audio_player.src) {
         if (audio_player.paused) {
             audio_player.play();
-            play_button.textContent = 'Pause';
+            play_button.innerHTML = PAUSE_SVG;
+            play_button.classList.add('playing');
         } else {
             audio_player.pause();
-            play_button.textContent = 'Play';
+            play_button.innerHTML = PLAY_SVG;
+            play_button.classList.remove('playing');
         }
     }
 });
 
 const update_slider_trail = (slider) => {
     const percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
-    slider.style.background = `linear-gradient(to right, #58A6FF ${percent}%, #30363D ${percent}%)`;
+    slider.style.background = `linear-gradient(to right, #63B3ED ${percent}%, #232B3E ${percent}%)`;
 };
 
 volume_control.addEventListener('input', () => {

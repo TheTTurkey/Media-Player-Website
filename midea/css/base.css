@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: #0B0E14;
+  color: #E8ECF4;
+}
+
+::selection {
+  background: rgba(99, 179, 237, 0.3);
+  color: #fff;
+}
+
+#music_upload {
+  display: none;
+}

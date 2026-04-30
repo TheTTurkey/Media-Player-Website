@@ -1,0 +1,127 @@
+#audio_box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 14px 24px;
+  background: rgba(11, 14, 20, 0.9);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(99, 179, 237, 0.1);
+  flex-wrap: wrap;
+}
+
+#music_upload_label {
+  color: #90CDF4;
+  font-size: 0.85rem;
+  font-weight: 600;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#play_button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #4299E1;
+  color: #0B0E14;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+#play_button:hover {
+  background: #63B3ED;
+  transform: scale(1.05);
+}
+
+.time {
+  color: #8B95A8;
+  font-size: 0.75rem;
+  font-weight: 500;
+  min-width: 36px;
+  text-align: center;
+}
+
+#slash {
+  color: #5A6478;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin: 0 2px;
+}
+
+#progress_bar,
+#volume_control {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  background: #232B3E;
+  outline: none;
+  cursor: pointer;
+}
+
+#progress_bar {
+  flex: 1;
+  min-width: 120px;
+  max-width: 400px;
+}
+
+#volume_control {
+  width: 100px;
+}
+
+#progress_bar::-webkit-slider-thumb,
+#volume_control::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #63B3ED;
+  border: 2px solid #0B0E14;
+  cursor: pointer;
+}
+
+#progress_bar::-moz-range-thumb,
+#volume_control::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #63B3ED;
+  border: 2px solid #0B0E14;
+  cursor: pointer;
+}
+
+.volume-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.volume-icon {
+  color: #5A6478;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.volume-icon:hover {
+  color: #63B3ED;
+}
+
+#volume_output {
+  color: #5A6478;
+  font-weight: 600;
+  font-size: 0.75rem;
+  min-width: 24px;
+  text-align: center;
+}
