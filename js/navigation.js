@@ -16,6 +16,7 @@ library_button.addEventListener('click', () => {
     library.style.display = "block";
     playlist.style.display = "none";
     about.style.display = "none";
+    audio_box.style.display = "flex";
     setActiveNav(library_button);
 });
 
@@ -23,6 +24,7 @@ playlist_button.addEventListener('click', () => {
     playlist.style.display = "block";
     library.style.display = "none";
     about.style.display = "none";
+    audio_box.style.display = "flex";
     setActiveNav(playlist_button);
 });
 
@@ -30,5 +32,6 @@ about_button.addEventListener('click', () => {
     about.style.display = "block";
     playlist.style.display = "none";
     library.style.display = "none";
+    audio_box.style.display = "none";
     setActiveNav(about_button);
 });
