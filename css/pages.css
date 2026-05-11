@@ -26,7 +26,6 @@
   font-weight: 600;
   cursor: pointer;
   margin-left: 24px;
-  transition: all 0.2s;
 }
 
 #music_upload_button:hover {
@@ -176,7 +175,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
   padding: 0;
 }
 
@@ -202,7 +200,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
   padding: 0;
 }
 

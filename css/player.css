@@ -1,16 +1,13 @@
 #audio_box {
   position: fixed;
   bottom: 0;
-  left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
   padding: 14px 24px;
-  background: rgba(11, 14, 20, 0.9);
-  backdrop-filter: blur(12px);
   border-top: 1px solid rgba(99, 179, 237, 0.1);
   flex-wrap: wrap;
 }
@@ -36,7 +33,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s;
 }
 
 #play_button:hover {
@@ -110,13 +106,8 @@
 .volume-icon {
   color: #5A6478;
   display: flex;
-  align-items: center;
-  cursor: pointer;
 }
 
-.volume-icon:hover {
-  color: #63B3ED;
-}
 
 #volume_output {
   color: #5A6478;
