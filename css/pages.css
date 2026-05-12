@@ -13,7 +13,6 @@
 #main p {
   color: #8B95A8;
   padding: 0 24px;
-  line-height: 1.7;
 }
 
 #music_upload_button {
@@ -29,20 +28,15 @@
 }
 
 #music_upload_button:hover {
-  background: rgba(99, 179, 237, 0.18);
   border-color: #63B3ED;
 }
 
-#library {
-  min-height: 100vh;
-}
 
 .empty-state {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 48px 24px;
-  text-align: center;
 }
 
 .empty-state-icon {
@@ -71,9 +65,9 @@
 }
 
 .empty-state p {
-  color: #5A6478 !important;
-  font-size: 0.85rem !important;
-  padding: 0 !important;
+  color: #5A6478;
+  font-size: 0.85rem;
+  padding: 0;
 }
 
 #music_list_div {
@@ -82,8 +76,6 @@
 
 #music_table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
   background: #161C28;
   border: 1px solid rgba(99, 179, 237, 0.15);
   border-radius: 16px;
@@ -111,17 +103,12 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   padding: 14px 16px;
-  text-align: left;
   border-bottom: 1px solid rgba(99, 179, 237, 0.08);
 }
 
 #music_table th.col-icon { width: 48px; }
 #music_table th.col-duration { width: 90px; text-align: center; }
 #music_table th.col-action { width: 100px; text-align: center; }
-
-.music-row {
-  transition: background 0.2s;
-}
 
 .music-row:hover {
   background: rgba(99, 179, 237, 0.04);
