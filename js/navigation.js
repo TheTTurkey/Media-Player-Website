@@ -1,3 +1,8 @@
+// Navigation js For Turkey Music
+// File : navigation.js
+// Author : Liam Turley
+// Date : 15/05/2026
+
 const library = document.getElementById('library');
 const playlist = document.getElementById('playlist');
 const library_button = document.getElementById('lib_link');

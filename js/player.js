@@ -1,3 +1,9 @@
+
+// Music Player, Dexie, Uplaod Talbe JS For Turkey Music
+// File : player.js
+// Author : Liam Turley
+// Date : 15/05/2026
+
 const audio_player = document.getElementById('audio_player');
 const audio_upload = document.getElementById('music_upload');
 const play_button = document.getElementById('play_button');

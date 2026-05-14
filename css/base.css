@@ -1,11 +1,11 @@
+/* Base styling For body and other Turkey Music
+File : base.css
+Author : Liam Turley
+Date : 15/05/2026 */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* body css */
 html, body {
   height: 100%;
   font-family: 'Inter', sans-serif;
@@ -13,11 +13,7 @@ html, body {
   color: #E8ECF4;
 }
 
-::selection {
-  background: rgba(99, 179, 237, 0.3);
-  color: #fff;
-}
-
+/* hiding music upload thingy */
 #music_upload {
   display: none;
 }
