@@ -3,6 +3,7 @@ File : player.css
 Author : Liam Turley
 Date : 15/05/2026 */
 
+/* player bar fixed at bottom */
 #audio_box {
   position: fixed;
   bottom: 0;
@@ -17,6 +18,7 @@ Date : 15/05/2026 */
   flex-wrap: wrap;
 }
 
+/* song name label */
 #music_upload_label {
   color: #90CDF4;
   font-size: 0.85rem;
@@ -24,6 +26,7 @@ Date : 15/05/2026 */
   max-width: 180px;
 }
 
+/*play button circle */
 #play_button {
   width: 44px;
   height: 44px;
@@ -37,11 +40,7 @@ Date : 15/05/2026 */
   justify-content: center;
 }
 
-#play_button:hover {
-  background: #63B3ED;
-  transform: scale(1.05);
-}
-
+/* time display */
 .time {
   color: #8B95A8;
   font-size: 0.75rem;
@@ -50,6 +49,7 @@ Date : 15/05/2026 */
   text-align: center;
 }
 
+/* slash between times */
 #slash {
   color: #5A6478;
   font-size: 0.75rem;
@@ -57,6 +57,7 @@ Date : 15/05/2026 */
   margin: 0 2px;
 }
 
+/* slider styling for progress and volume */
 #progress_bar,
 #volume_control {
   -webkit-appearance: none;
@@ -68,16 +69,19 @@ Date : 15/05/2026 */
   cursor: pointer;
 }
 
+/* progress bar width */
 #progress_bar {
   flex: 1;
   min-width: 120px;
   max-width: 400px;
 }
 
+/*volume slider width */
 #volume_control {
   width: 100px;
 }
 
+/* slider thumb - chrome */
 #progress_bar::-webkit-slider-thumb,
 #volume_control::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -89,6 +93,7 @@ Date : 15/05/2026 */
   cursor: pointer;
 }
 
+/* slider thumb - firefox */
 #progress_bar::-moz-range-thumb,
 #volume_control::-moz-range-thumb {
   width: 14px;
@@ -99,18 +104,20 @@ Date : 15/05/2026 */
   cursor: pointer;
 }
 
+/* volume controls group */
 .volume-group {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
+/* volume icon */
 .volume-icon {
   color: #5A6478;
   display: flex;
 }
 
-
+/* volume number display */
 #volume_output {
   color: #5A6478;
   font-weight: 600;

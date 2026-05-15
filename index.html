@@ -24,7 +24,8 @@ Date : 15/05/2026
         -dixie -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -36,6 +37,7 @@ Date : 15/05/2026
     <script src="https://unpkg.com/dexie/dist/dexie.js"></script>
     <script src="js/navigation.js" defer></script>
     <script src="js/player.js" defer></script>
+    <script src="js/playlist.js" defer></script>
 </head>
 
 <body>
@@ -44,16 +46,17 @@ Date : 15/05/2026
         <!-- Title -->
         <span id="title">
             <!-- Music Icon SVG -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#titleGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="url(#titleGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <defs>
                     <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" style="stop-color:#63B3ED" />
                         <stop offset="100%" style="stop-color:#C4B5FD" />
                     </linearGradient>
                 </defs>
-                <path d="M9 18V5l12-2v13"/>
-                <circle cx="6" cy="18" r="3"/>
-                <circle cx="18" cy="16" r="3"/>
+                <path d="M9 18V5l12-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="18" cy="16" r="3" />
             </svg>
             Turkey Music
         </span>
@@ -66,7 +69,7 @@ Date : 15/05/2026
     </nav>
 
 
-<!-- Libary Page -->
+    <!-- Libary Page -->
     <div id="library">
         <audio id="audio_player" type="audio/*">
             Your browser does not support the audio element.
@@ -77,10 +80,12 @@ Date : 15/05/2026
             <!-- Upload Button  -->
             <div>
                 <button id="music_upload_button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 6px;">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                        <polyline points="17 8 12 3 7 8"/>
-                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                        style="vertical-align: -2px; margin-right: 6px;">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
                     </svg>
                     Upload Music
                 </button>
@@ -105,10 +110,11 @@ Date : 15/05/2026
                 <div class="empty-state" id="library_empty_state">
                     <div class="empty-state-icon">
                         <!-- Music Icon SVG -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#63B3ED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 18V5l12-2v13"/>
-                            <circle cx="6" cy="18" r="3"/>
-                            <circle cx="18" cy="16" r="3"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#63B3ED"
+                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 18V5l12-2v13" />
+                            <circle cx="6" cy="18" r="3" />
+                            <circle cx="18" cy="16" r="3" />
                         </svg>
                     </div>
                     <h3>Your library is empty</h3>
@@ -120,15 +126,17 @@ Date : 15/05/2026
     </div>
 
 
-<!-- About Page -->
+    <!-- About Page -->
     <div id="about">
         <div id="main">
             <h1>About</h1>
             <div class="about-content">
                 <!-- About Text  -->
                 <div class="about-text">
-                    <p>Turkey Music is a simple music player built with HTML, CSS, and JavaScript. It allows users to upload
-                        their own music files and create playlists. The player features basic controls such as play, pause,
+                    <p>Turkey Music is a simple music player built with HTML, CSS, and JavaScript. It allows users to
+                        upload
+                        their own music files and create playlists. The player features basic controls such as play,
+                        pause,
                         and volume adjustment. The design is clean and user-friendly, making it easy for anyone to enjoy
                         their music collection.</p>
                 </div>
@@ -149,25 +157,29 @@ Date : 15/05/2026
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="media/Image 2.webp" alt="Second slide">
+                                <img class="d-block w-100" src="media/Image 2.webp" alt="Second slide"
+                                    onclick="document.getElementById('pla_link').click()">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Upload Your Music</h5>
                                     <p>Easily add your favourite tracks</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="media/Image 3.jpg" alt="Third slide">
+                                <img class="d-block w-100" src="media/Image 3.jpg" alt="Third slide"
+                                    onclick="document.getElementById('lib_link').click()">
                                 <div class="carousel-caption d-none d-md-block">
                                     <h5>Create Playlists</h5>
                                     <p>Organise your music collection</p>
                                 </div>
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -179,31 +191,126 @@ Date : 15/05/2026
 
 
 
-<!-- Playlist Page -->
+    <!-- Playlist Page -->
     <div id="playlist">
         <div id="main">
-            <h1>Music Playlist</h1>
-            <div>
-                <!-- Music Icon SVG -->
-                <button id="music_upload_button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -2px; margin-right: 6px;">
-                        <line x1="12" y1="5" x2="12" y2="19"/>
-                        <line x1="5" y1="12" x2="19" y2="12"/>
+            <!-- Playlist List View -->
+            <div id="playlist_list">
+                <h1>Music Playlist</h1>
+                <div>
+                    <button id="create_playlist_button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                        style="vertical-align: -2px; margin-right: 6px;">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
                     </svg>
-                    Create Playlist
-                </button>
+                        Create Playlist
+                    </button>
+                </div>
+
+                <!-- Create Playlist Form -->
+                <div id="create_playlist_form" style="display: none;">
+                    <input type="text" id="playlist_name_input">
+                    <button id="create_playlist_confirm">Create</button>
+                    <button id="create_playlist_cancel">Cancel</button>
+                </div>
+
+                <!-- Playlists Table -->
+                <div id="playlist_list_div">
+                    <table id="playlist_table">
+                        <thead>
+                            <tr>
+                                <th class="col-icon"></th>
+                                <th class="col-name">Name</th>
+                                <th class="col-duration">Songs</th>
+                                <th class="col-action">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="playlist_table_body">
+                        </tbody>
+                    </table>
+
+                    <!-- No Playlist Icon -->
+                    <div class="empty-state" id="playlist_empty_state">
+                        <div class="empty-state-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#63B3ED"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M11 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-5m-1.414-9.414a2 2 0 1 1 2.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                            </svg>
+                        </div>
+                        <h3>No playlists yet</h3>
+                        <p>Create a playlist to organize your music</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- No Playlist Icon  -->
-            <div class="empty-state">
-                <div class="empty-state-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#63B3ED" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M11 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-5m-1.414-9.414a2 2 0 1 1 2.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+            <!-- songs inside a playlist -->
+            <div id="playlist_view" style="display: none;">
+                <button id="back_to_playlists">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                        style="vertical-align: -2px; margin-right: 6px;">
+                        <polyline points="15 18 9 12 15 6" />
                     </svg>
+                    Back
+                </button>
+                <h1 id="playlist_view_title"></h1>
+                <div>
+                    <button id="add_song_to_playlist_btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                            style="vertical-align: -2px; margin-right: 6px;">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        Add Song
+                    </button>
                 </div>
-                <h3>No playlists yet</h3>
-                <p>Create a playlist to organize your music</p>
+
+                <!-- Playlist Songs Table -->
+                <div id="playlist_songs_div">
+                    <table id="playlist_song_table">
+                        <thead>
+                            <tr>
+                                <th class="col-icon"></th>
+                                <th class="col-name">Name</th>
+                                <th class="col-duration">Duration</th>
+                                <th class="col-action">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="playlist_song_list">
+                        </tbody>
+                    </table>
+
+                    <!-- No Songs in Playlist -->
+                    <div class="empty-state" id="playlist_song_empty">
+                        <div class="empty-state-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#63B3ED"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 18V5l12-2v13" />
+                                <circle cx="6" cy="18" r="3" />
+                                <circle cx="18" cy="16" r="3" />
+                            </svg>
+                        </div>
+                        <h3>No songs in this playlist</h3>
+                        <p>Add songs from your library</p>
+                    </div>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Add Song to Playlist Modal -->
+    <div id="add_song_modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Songs</h3>
+                <button id="add_song_modal_close">✕</button>
+            </div>
+            <div id="add_song_modal_list"></div>
         </div>
     </div>
 
@@ -215,8 +322,9 @@ Date : 15/05/2026
         <span id="music_upload_label"></span>
         <button id="play_button">
             <!-- Play Button SVG  -->
-            <svg id="play_icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-                <polygon points="5 3 19 12 5 21 5 3"/>
+            <svg id="play_icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                fill="currentColor" stroke="none">
+                <polygon points="5 3 19 12 5 21 5 3" />
             </svg>
         </button>
 
@@ -230,10 +338,11 @@ Date : 15/05/2026
         <div class="volume-group">
             <span class="volume-icon" id="volume_icon" title="Mute/Unmute">
                 <!-- Music Icon SVG  -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
                 </svg>
             </span>
             <input type="range" id="volume_control" max="100" value="50">

@@ -4,13 +4,13 @@ Author : Liam Turley
 Date : 15/05/2026 */
 
 
-
-
+/* main content area */
 #main {
   margin-top: 80px;
   padding-bottom: 100px;
 }
 
+/* page title styling */
 #main h1 {
   font-size: 2.5rem;
   font-weight: 800;
@@ -18,11 +18,13 @@ Date : 15/05/2026 */
   padding: 24px 24px 16px;
 }
 
+/*paragraph text */
 #main p {
   color: #8B95A8;
   padding: 0 24px;
 }
 
+/* upload music button */
 #music_upload_button {
   background: rgba(99, 179, 237, 0.1);
   color: #90CDF4;
@@ -35,11 +37,7 @@ Date : 15/05/2026 */
   margin-left: 24px;
 }
 
-#music_upload_button:hover {
-  border-color: #63B3ED;
-}
-
-
+/* empty state when no songs or playlists */
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -47,6 +45,7 @@ Date : 15/05/2026 */
   padding: 48px 24px;
 }
 
+/* empty state icon circle */
 .empty-state-icon {
   width: 80px;
   height: 80px;
@@ -62,9 +61,9 @@ Date : 15/05/2026 */
 .empty-state-icon svg {
   width: 36px;
   height: 36px;
-  opacity: 0.7;
 }
 
+/* empty state text */
 .empty-state h3 {
   color: #E8ECF4;
   font-size: 1.25rem;
@@ -78,10 +77,12 @@ Date : 15/05/2026 */
   padding: 0;
 }
 
+/* music list container */
 #music_list_div {
   padding: 0 24px 24px;
 }
 
+/* Music table styling */
 #music_table {
   width: 100%;
   background: #161C28;
@@ -92,40 +93,42 @@ Date : 15/05/2026 */
   margin-top: 32px;
 }
 
+/* show table when it has songs */
 #music_table.has-songs {
   display: table;
 }
 
+/* hide empty state when table has songs */
 #music_table.has-songs ~ .empty-state {
   display: none;
 }
 
+/* table header row */
 #music_table thead tr {
   background: #1C2333;
 }
 
+/* table header text */
 #music_table th {
   color: #5A6478;
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
   padding: 14px 16px;
   border-bottom: 1px solid rgba(99, 179, 237, 0.08);
 }
 
+/* column widths */
 #music_table th.col-icon { width: 48px; }
 #music_table th.col-duration { width: 90px; text-align: center; }
 #music_table th.col-action { width: 100px; text-align: center; }
 
-.music-row:hover {
-  background: rgba(99, 179, 237, 0.04);
-}
-
+/*active row highlight */
 .music-row.active {
   background: rgba(99, 179, 237, 0.08);
 }
 
+/* table row cells */
 .music-row td {
   padding: 12px 16px;
   border-bottom: 1px solid rgba(99, 179, 237, 0.05);
@@ -133,23 +136,23 @@ Date : 15/05/2026 */
   font-size: 0.85rem;
 }
 
+/* icon column */
 .music-row td.col-icon { text-align: center; }
 .music-row td.col-icon svg { display: block; margin: 0 auto; }
 
+/* song name column */
 .music-row td.col-name {
   font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 0;
 }
 
+/* duration column */
 .music-row td.col-duration {
   text-align: center;
   color: #8B95A8;
   font-size: 0.75rem;
 }
 
+/* action buttons column */
 .music-row td.col-action {
   text-align: center;
   display: flex;
@@ -158,6 +161,7 @@ Date : 15/05/2026 */
   align-items: center;
 }
 
+/*play button in table */
 .play-song-btn {
   background: transparent;
   border: 1.5px solid #63B3ED;
@@ -173,16 +177,13 @@ Date : 15/05/2026 */
   padding: 0;
 }
 
-.play-song-btn:hover {
-  background: #63B3ED;
-  color: #0B0E14;
-}
-
+/* active row play button fills in */
 .music-row.active .play-song-btn {
   background: #63B3ED;
   color: #0B0E14;
 }
 
+/* delete button in table */
 .delete-song-btn {
   background: transparent;
   border: 1.5px solid #F56565;
@@ -198,16 +199,14 @@ Date : 15/05/2026 */
   padding: 0;
 }
 
-.delete-song-btn:hover {
-  background: #F56565;
-  color: #0B0E14;
-}
-
+/* remove border on last row */
 .music-row:last-child td { border-bottom: none; }
 
+/*playlist and about page display */
 #playlist { display: none; min-height: 100vh; }
 #about { min-height: 100vh; display: none; }
 
+/* about page layout */
 .about-content {
   display: flex;
   flex-wrap: wrap;
@@ -215,6 +214,7 @@ Date : 15/05/2026 */
   padding: 0 24px;
 }
 
+/* about text box */
 .about-text {
   flex: 1 1 300px;
   background: #161C28;
@@ -224,13 +224,15 @@ Date : 15/05/2026 */
 }
 
 .about-text p {
-  padding: 0 !important;
-  color: #8B95A8 !important;
-  line-height: 1.8 !important;
+  padding: 0;
+  color: #8B95A8;
+  line-height: 1.8;
 }
 
+/*carousel container */
 .about-carousel { flex: 1 1 300px; }
 
+/* carousel images */
 .carousel-item img {
   height: 400px;
   object-fit: cover;
@@ -238,6 +240,7 @@ Date : 15/05/2026 */
   border-radius: 16px;
 }
 
+/*carousel caption overlay */
 .carousel-caption {
   background: rgba(11, 14, 20, 0.7);
   border-radius: 10px;
@@ -252,14 +255,252 @@ Date : 15/05/2026 */
 }
 
 .carousel-caption p {
-  font-size: 0.85rem !important;
-  color: #8B95A8 !important;
-  padding: 0 !important;
+  font-size: 0.85rem;
+  color: #8B95A8;
+  padding: 0;
   margin: 0;
 }
 
+/* playlist list and songs containers */
+#playlist_list_div,
+#playlist_songs_div {
+  padding: 0 24px 24px;
+}
+
+/* playlist tables */
+#playlist_table,
+#playlist_song_table {
+  width: 100%;
+  background: #161C28;
+  border: 1px solid rgba(99, 179, 237, 0.15);
+  border-radius: 16px;
+  overflow: hidden;
+  display: none;
+  margin-top: 32px;
+}
+
+/* show playlist table when has songs */
+#playlist_table.has-songs,
+#playlist_song_table.has-songs {
+  display: table;
+}
+
+/*hide empty state when table showing */
+#playlist_table.has-songs ~ .empty-state,
+#playlist_song_table.has-songs ~ .empty-state {
+  display: none;
+}
+
+/* playlist table header */
+#playlist_table thead tr,
+#playlist_song_table thead tr {
+  background: #1C2333;
+}
+
+#playlist_table th,
+#playlist_song_table th {
+  color: #5A6478;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(99, 179, 237, 0.08);
+}
+
+/*playlist table column widths */
+#playlist_table th.col-icon,
+#playlist_song_table th.col-icon { width: 48px; }
+#playlist_table th.col-duration,
+#playlist_song_table th.col-duration { width: 90px; text-align: center; }
+#playlist_table th.col-action,
+#playlist_song_table th.col-action { width: 100px; text-align: center; }
+
+/* Create Playlist Form */
+#create_playlist_form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+}
+
+/* playlist name text input */
+#playlist_name_input {
+  background: #161C28;
+  border: 1px solid rgba(99, 179, 237, 0.3);
+  border-radius: 999px;
+  padding: 8px 20px;
+  color: #E8ECF4;
+  font-size: 0.85rem;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  flex: 1;
+  max-width: 300px;
+}
+
+/* confirm create button */
+#create_playlist_confirm {
+  background: rgba(99, 179, 237, 0.15);
+  color: #90CDF4;
+  border: 1px solid rgba(99, 179, 237, 0.3);
+  border-radius: 999px;
+  padding: 8px 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+/*cancel button */
+#create_playlist_cancel {
+  background: transparent;
+  color: #5A6478;
+  border: 1px solid rgba(90, 100, 120, 0.3);
+  border-radius: 999px;
+  padding: 8px 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+/* create Playlist and add song buttons */
+#create_playlist_button,
+#add_song_to_playlist_btn {
+  background: rgba(99, 179, 237, 0.1);
+  color: #90CDF4;
+  border: 1px solid rgba(99, 179, 237, 0.3);
+  border-radius: 999px;
+  padding: 8px 32px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 24px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* back button to go back to playlist list */
+#back_to_playlists {
+  background: transparent;
+  color: #8B95A8;
+  border: 1px solid rgba(90, 100, 120, 0.3);
+  border-radius: 999px;
+  padding: 8px 24px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 24px;
+  margin-top: 8px;
+  font-family: 'Inter', sans-serif;
+}
+
+/*add song modal overlay */
+#add_song_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* modal box */
+.modal-content {
+  background: #161C28;
+  border: 1px solid rgba(99, 179, 237, 0.2);
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+/*modal header with title and close button */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid rgba(99, 179, 237, 0.1);
+}
+
+.modal-header h3 {
+  color: #E8ECF4;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* close button */
+.modal-header button {
+  background: transparent;
+  border: none;
+  color: #5A6478;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+/* each song item in the modal */
+.modal-song-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(99, 179, 237, 0.05);
+  gap: 12px;
+}
+
+/* greyed out if already added */
+.modal-song-item.already-added {
+  opacity: 0.5;
+}
+
+.modal-song-icon {
+  flex-shrink: 0;
+}
+
+/* song name in modal */
+.modal-song-name {
+  flex: 1;
+  color: #E8ECF4;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* add button in modal */
+.modal-add-btn {
+  background: rgba(99, 179, 237, 0.1);
+  color: #90CDF4;
+  border: 1px solid rgba(99, 179, 237, 0.3);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+.modal-add-btn:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+/* empty modal message */
+.modal-empty {
+  color: #5A6478;
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 0.85rem;
+}
+
+/* mobile responsive */
 @media (max-width: 600px) {
   #main h1 { font-size: 2rem; padding: 16px; }
   .about-content { flex-direction: column; }
   .carousel-item img { height: 250px; }
+  #create_playlist_form { flex-wrap: wrap; }
+  .modal-content { width: 95%; }
 }

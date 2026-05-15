@@ -3,6 +3,7 @@ File : navbar.css
 Author : Liam Turley
 Date : 15/05/2026 */
 
+/* fixed nav bar at top */
 #nav_bar {
   position: fixed;
   top: 0;
@@ -17,6 +18,7 @@ Date : 15/05/2026 */
   border-bottom: 1px solid rgba(99, 179, 237, 0.1);
 }
 
+/* title text with gradient */
 #title {
   font-weight: 800;
   font-size: 1.5rem;
@@ -34,6 +36,7 @@ Date : 15/05/2026 */
   flex-shrink: 0;
 }
 
+/* nav button list */
 #nav_bar_list {
   display: flex;
   list-style: none;
@@ -43,6 +46,7 @@ Date : 15/05/2026 */
   margin-bottom: 6px;
 }
 
+/*nav buttons */
 li button {
   border: 1px solid rgba(99, 179, 237, 0.15);
   border-radius: 99px;
@@ -54,12 +58,7 @@ li button {
   cursor: pointer;
 }
 
-li button:hover {
-  background: #232B3E;
-  color: #E8ECF4;
-  border-color: rgba(99, 179, 237, 0.3);
-}
-
+/* active button style */
 li button.active {
   background: rgba(99, 179, 237, 0.12);
   color: #90CDF4;
