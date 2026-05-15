@@ -40,6 +40,7 @@ Date : 15/05/2026 */
   justify-content: center;
 }
 
+
 /* time display */
 .time {
   color: #8B95A8;
@@ -81,21 +82,11 @@ Date : 15/05/2026 */
   width: 100px;
 }
 
+
 /* slider thumb - chrome */
 #progress_bar::-webkit-slider-thumb,
 #volume_control::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #63B3ED;
-  border: 2px solid #0B0E14;
-  cursor: pointer;
-}
-
-/* slider thumb - firefox */
-#progress_bar::-moz-range-thumb,
-#volume_control::-moz-range-thumb {
   width: 14px;
   height: 14px;
   border-radius: 50%;

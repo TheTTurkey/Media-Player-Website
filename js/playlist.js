@@ -4,7 +4,6 @@
 // Author : Liam Turley
 // Date : 15/05/2026
 
-
 //playlist variables
 let current_playlist_id = null;
 let current_playlist_song_index = -1;
@@ -20,7 +19,6 @@ const playlist_name_input = document.getElementById('playlist_name_input');
 const create_playlist_confirm = document.getElementById('create_playlist_confirm');
 const create_playlist_cancel = document.getElementById('create_playlist_cancel');
 const create_playlist_form = document.getElementById('create_playlist_form');
-
 //  playlist view elements
 const playlist_view_div = document.getElementById('playlist_view');
 const playlist_view_title = document.getElementById('playlist_view_title');
@@ -33,12 +31,12 @@ const add_song_modal = document.getElementById('add_song_modal');
 const add_song_modal_list = document.getElementById('add_song_modal_list');
 const add_song_modal_close = document.getElementById('add_song_modal_close');
 
+
 // show the create form when button clicked
 create_playlist_btn.addEventListener('click', () => {
     create_playlist_form.style.display = 'flex';
     playlist_name_input.focus();
 });
-
 //cancel button hides form
 create_playlist_cancel.addEventListener('click', () => {
     create_playlist_form.style.display = 'none';
@@ -54,7 +52,6 @@ create_playlist_confirm.addEventListener('click', async () => {
         name: name,
         songIds: []
     });
-
     add_playlist_to_table(id, name, 0);
     create_playlist_form.style.display = 'none';
     playlist_name_input.value = '';
@@ -66,6 +63,7 @@ playlist_name_input.addEventListener('keydown', (e) => {
         create_playlist_confirm.click();
     }
 });
+
 
 // adds playlist row to table
 function add_playlist_to_table(id, name, song_count) {
@@ -90,12 +88,10 @@ function add_playlist_to_table(id, name, song_count) {
             <button class="delete_song_btn delete_playlist_btn" data-id="${id}" title="Delete">✕</button>
         </td>
     `;
-
     // open button
     row.querySelector('.open_playlist_btn').addEventListener('click', () => {
         open_playlist(id);
     });
-
     //delete button
     row.querySelector('.delete_playlist_btn').addEventListener('click', async () => {
         await delete_playlist(id, row);
@@ -110,26 +106,24 @@ function add_playlist_to_table(id, name, song_count) {
 async function delete_playlist(id, row) {
     await db.playlists.delete(id);
     row.remove();
-
     if (playlist_table_body.children.length === 0) {
         playlist_table.classList.remove('has_songs');
         if (playlist_empty_state) playlist_empty_state.style.display = '';
     }
 }
 
+
 // open playlist and show its songs
 async function open_playlist(id) {
     current_playlist_id = id;
     const playlist = await db.playlists.get(id);
     if (!playlist) return;
-
     playlist_view_title.textContent = playlist.name;
     playlist_song_table_body.innerHTML = '';
 
     // load songs
     const song_ids = playlist.songIds || [];
     let loaded_count = 0;
-
     for (let i = 0; i < song_ids.length; i++) {
         const song = await db.songs.get(song_ids[i]);
         if (song) {
@@ -145,7 +139,6 @@ async function open_playlist(id) {
         playlist_song_table.classList.remove('has_songs');
         if (playlist_song_empty) playlist_song_empty.style.display = '';
     }
-
     // show playlist view hide playlist list
     playlist_list_div.style.display = 'none';
     playlist_view_div.style.display = 'block';
@@ -168,24 +161,21 @@ function add_song_to_playlist_view(song_id, title, duration_str, index) {
     row.querySelector('.play_song_btn').addEventListener('click', () => {
         play_from_playlist(song_id, index);
     });
-
     row.querySelector('.remove_from_playlist_btn').addEventListener('click', async () => {
         await remove_song_from_playlist(song_id, row);
     });
-
     playlist_song_table_body.appendChild(row);
 }
+
 
 // plays song from playlist
 async function play_from_playlist(song_id, index) {
     const playlist = await db.playlists.get(current_playlist_id);
     if (!playlist) return;
-
     current_playlist_songs = playlist.songIds || [];
     current_playlist_song_index = index;
 
     await play_song(song_id);
-
     //highlight the row thats playing
     playlist_song_table_body.querySelectorAll('.music_row').forEach(r => r.classList.remove('active'));
     const rows = playlist_song_table_body.querySelectorAll('.music_row');
@@ -199,17 +189,16 @@ async function remove_song_from_playlist(song_id, row) {
 
     playlist.songIds = (playlist.songIds || []).filter(id => id !== song_id);
     await db.playlists.put(playlist);
-
     row.remove();
 
     if (playlist_song_table_body.children.length === 0) {
         playlist_song_table.classList.remove('has_songs');
         if (playlist_song_empty) playlist_song_empty.style.display = '';
     }
-
     //update the song count
     update_playlist_song_count(current_playlist_id, playlist.songIds.length);
 }
+
 
 // updates song count text
 function update_playlist_song_count(playlist_id, count) {
@@ -219,13 +208,13 @@ function update_playlist_song_count(playlist_id, count) {
         if (duration_cell) duration_cell.textContent = `${count} songs`;
     }
 }
-
 //back button
 back_to_playlists_btn.addEventListener('click', () => {
     playlist_view_div.style.display = 'none';
     playlist_list_div.style.display = 'block';
     current_playlist_id = null;
 });
+
 
 // add song button - shows modal with library songs
 add_song_to_playlist_btn.addEventListener('click', async () => {
@@ -237,7 +226,6 @@ add_song_to_playlist_btn.addEventListener('click', async () => {
     } else {
         const playlist = await db.playlists.get(current_playlist_id);
         const existing_ids = playlist ? (playlist.songIds || []) : [];
-
         for (const song of songs) {
             const already_added = existing_ids.includes(song.id);
             const item = document.createElement('div');
@@ -251,7 +239,6 @@ add_song_to_playlist_btn.addEventListener('click', async () => {
                     ${already_added ? 'Added' : 'Add'}
                 </button>
             `;
-
             if (!already_added) {
                 item.querySelector('.modal_add_btn').addEventListener('click', async (e) => {
                     const btn = e.target;
@@ -265,10 +252,8 @@ add_song_to_playlist_btn.addEventListener('click', async () => {
             add_song_modal_list.appendChild(item);
         }
     }
-
     add_song_modal.style.display = 'flex';
 });
-
 //close modal
 add_song_modal_close.addEventListener('click', () => {
     add_song_modal.style.display = 'none';
@@ -283,15 +268,14 @@ add_song_modal.addEventListener('click', (e) => {
     }
 });
 
+
 // add song to current playlist in db
 async function add_song_to_playlist(song_id) {
     const playlist = await db.playlists.get(current_playlist_id);
     if (!playlist) return;
-
     if (!playlist.songIds) playlist.songIds = [];
     playlist.songIds.push(song_id);
     await db.playlists.put(playlist);
-
     update_playlist_song_count(current_playlist_id, playlist.songIds.length);
 }
 
@@ -320,6 +304,7 @@ audio_player.addEventListener('ended', async () => {
     }
 });
 
+
 //load playlists when page loads
 async function load_playlists_from_db() {
     const playlists = await db.playlists.toArray();
@@ -328,5 +313,4 @@ async function load_playlists_from_db() {
         add_playlist_to_table(pl.id, pl.name, count);
     }
 }
-
 load_playlists_from_db();

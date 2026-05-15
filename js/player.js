@@ -19,11 +19,11 @@ const music_list = document.getElementById('music_list');
 
 // setting up dexie database
 const db = new Dexie("music");
-
 db.version(1).stores({
     songs: "++id, title",
     playlists: "++id, name"
 });
+
 
 //saves a song to the database
 async function store_mp3(title, file, file_duration) {
@@ -40,6 +40,7 @@ const PLAY_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
 const PAUSE_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>`;
 const MUSIC_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#63B3ED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`;
 
+
 // adds a song to the library table
 function add_song_to_list(id, title, song_duration) {
     const row = document.createElement('tr');
@@ -53,7 +54,6 @@ function add_song_to_list(id, title, song_duration) {
             <button class="delete_song_btn" data-id="${id}" title="Delete">✕</button>
         </td>
     `;
-
     //play button click
     row.querySelector('.play_song_btn').addEventListener('click', () => {
         play_song(id, title);
@@ -63,17 +63,16 @@ function add_song_to_list(id, title, song_duration) {
     row.querySelector('.delete_song_btn').addEventListener('click', async () => {
         await delete_song(id, row);
     });
-
     // add row to table
     music_list.appendChild(row);
 
     //show the table
     document.getElementById('music_table').classList.add('has_songs');
-
     // hide empty state
     const empty_state = document.getElementById('library_empty_state');
     if (empty_state) empty_state.style.display = 'none';
 }
+
 
 //deletes a song from database and removes from table
 async function delete_song(id, row) {
@@ -91,10 +90,8 @@ async function delete_song(id, row) {
         progress_bar.value = 0;
         update_slider_trail(progress_bar);
     }
-
     //remove the row
     row.remove();
-
     // if no songs left show empty state again
     if (music_list.children.length === 0) {
         document.getElementById('music_table').classList.remove('has_songs');
@@ -116,6 +113,7 @@ function get_duration(file) {
         });
     });
 }
+
 
 //plays a song from the database
 async function play_song(id, title) {
@@ -141,6 +139,7 @@ const format_time = (seconds) => {
     return `${min}:${sec}`;
 };
 
+
 //loads all songs
 async function load_songs_from_db() {
     const songs = await db.songs.toArray();
@@ -149,8 +148,8 @@ async function load_songs_from_db() {
         add_song_to_list(song.id, song.title, dur);
     }
 }
-
 load_songs_from_db();
+
 
 //when user uploads a file
 audio_upload.addEventListener('change', async () => {
@@ -161,7 +160,6 @@ audio_upload.addEventListener('change', async () => {
 
         const file_duration = await get_duration(file);
         const id = await store_mp3(name_without_ext, file, file_duration);
-
         add_song_to_list(id, name_without_ext, format_time(file_duration));
 
         //set it as current song
@@ -185,6 +183,7 @@ play_button.addEventListener('click', () => {
     }
 });
 
+
 // updates the slider color trail
 const update_slider_trail = (slider) => {
     const percent = ((slider.value - slider.min) / (slider.max - slider.min)) * 100;
@@ -198,14 +197,12 @@ volume_control.addEventListener('input', () => {
     volume_output.value = volume_control.value;
     update_slider_trail(volume_control);
 });
-
 update_slider_trail(volume_control);
 
 audio_player.addEventListener('loadedmetadata', () => {
     progress_bar.value = Math.floor(audio_player.duration);
     duration.textContent = format_time(audio_player.duration);
 });
-
 progress_bar.addEventListener('input', () => {
     audio_player.currentTime = progress_bar.value;
     update_slider_trail(progress_bar);
@@ -218,6 +215,7 @@ audio_player.addEventListener('timeupdate', () => {
     current_time.textContent = format_time(audio_player.currentTime);
     update_slider_trail(progress_bar);
 });
+
 
 audio_upload_button.addEventListener('click', () => {
     audio_upload.click();

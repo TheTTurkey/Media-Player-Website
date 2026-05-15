@@ -10,7 +10,6 @@ const library_button = document.getElementById('lib_link');
 const playlist_button = document.getElementById('pla_link');
 const about_button = document.getElementById('abo_link');
 const about = document.getElementById('about');
-
 //nav buttons
 const nav_buttons = [library_button, playlist_button, about_button];
 
@@ -20,6 +19,7 @@ function set_active_nav(active_btn) {
     active_btn.classList.add('active');
 }
 
+
 //library button click
 library_button.addEventListener('click', () => {
     library.style.display = "block";
@@ -28,7 +28,6 @@ library_button.addEventListener('click', () => {
     audio_box.style.display = "flex";
     set_active_nav(library_button);
 });
-
 // playlist button click
 playlist_button.addEventListener('click', () => {
     playlist.style.display = "block";
