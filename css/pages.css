@@ -185,7 +185,7 @@ Date : 15/05/2026 */
   height: 32px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 0.75rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -207,7 +207,7 @@ Date : 15/05/2026 */
   height: 32px;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 0.813rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
