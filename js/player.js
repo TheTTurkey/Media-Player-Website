@@ -26,11 +26,11 @@ db.version(1).stores({
 });
 
 //saves a song to the database
-async function storeMp3(title, file, fileDuration) {
+async function store_mp3(title, file, file_duration) {
     const id = await db.songs.add({
         title: title,
         mp3Blob: file,
-        duration: fileDuration
+        duration: file_duration
     });
     return id;
 }
@@ -41,42 +41,42 @@ const PAUSE_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18
 const MUSIC_ICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#63B3ED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`;
 
 // adds a song to the library table
-function addSongToList(id, title, songDuration) {
+function add_song_to_list(id, title, song_duration) {
     const row = document.createElement('tr');
-    row.classList.add('music-row');
+    row.classList.add('music_row');
     row.innerHTML = `
-        <td class="col-icon">${MUSIC_ICON_SVG}</td>
-        <td class="col-name">${title}</td>
-        <td class="col-duration">${songDuration}</td>
-        <td class="col-action">
-            <button class="play-song-btn" data-id="${id}" title="Play">▶</button>
-            <button class="delete-song-btn" data-id="${id}" title="Delete">✕</button>
+        <td class="col_icon">${MUSIC_ICON_SVG}</td>
+        <td class="col_name">${title}</td>
+        <td class="col_duration">${song_duration}</td>
+        <td class="col_action">
+            <button class="play_song_btn" data-id="${id}" title="Play">▶</button>
+            <button class="delete_song_btn" data-id="${id}" title="Delete">✕</button>
         </td>
     `;
 
     //play button click
-    row.querySelector('.play-song-btn').addEventListener('click', () => {
-        playSong(id, title);
+    row.querySelector('.play_song_btn').addEventListener('click', () => {
+        play_song(id, title);
     });
 
     // delete button click
-    row.querySelector('.delete-song-btn').addEventListener('click', async () => {
-        await deleteSong(id, row);
+    row.querySelector('.delete_song_btn').addEventListener('click', async () => {
+        await delete_song(id, row);
     });
 
     // add row to table
     music_list.appendChild(row);
 
     //show the table
-    document.getElementById('music_table').classList.add('has-songs');
+    document.getElementById('music_table').classList.add('has_songs');
 
     // hide empty state
-    const emptyState = document.getElementById('library_empty_state');
-    if (emptyState) emptyState.style.display = 'none';
+    const empty_state = document.getElementById('library_empty_state');
+    if (empty_state) empty_state.style.display = 'none';
 }
 
 //deletes a song from database and removes from table
-async function deleteSong(id, row) {
+async function delete_song(id, row) {
     await db.songs.delete(id);
 
     // if this song was playing, stop it
@@ -97,28 +97,28 @@ async function deleteSong(id, row) {
 
     // if no songs left show empty state again
     if (music_list.children.length === 0) {
-        document.getElementById('music_table').classList.remove('has-songs');
-        const emptyState = document.getElementById('library_empty_state');
-        if (emptyState) emptyState.style.display = '';
+        document.getElementById('music_table').classList.remove('has_songs');
+        const empty_state = document.getElementById('library_empty_state');
+        if (empty_state) empty_state.style.display = '';
     }
 }
 
 // gets the duration of an audio file
-function getDuration(file) {
+function get_duration(file) {
     return new Promise((resolve) => {
-        const tempAudio = new Audio();
-        tempAudio.src = URL.createObjectURL(file);
-        tempAudio.addEventListener('loadedmetadata', () => {
-            resolve(tempAudio.duration);
+        const temp_audio = new Audio();
+        temp_audio.src = URL.createObjectURL(file);
+        temp_audio.addEventListener('loadedmetadata', () => {
+            resolve(temp_audio.duration);
         });
-        tempAudio.addEventListener('error', () => {
+        temp_audio.addEventListener('error', () => {
             resolve(0);
         });
     });
 }
 
 //plays a song from the database
-async function playSong(id, title) {
+async function play_song(id, title) {
     const song = await db.songs.get(id);
     if (song) {
         // set audio source and play
@@ -128,8 +128,8 @@ async function playSong(id, title) {
         play_button.innerHTML = PAUSE_SVG;
         play_button.classList.add('playing');
 
-        document.querySelectorAll('.music-row').forEach(r => r.classList.remove('active'));
-        const btn = document.querySelector(`.play-song-btn[data-id="${id}"]`);
+        document.querySelectorAll('.music_row').forEach(r => r.classList.remove('active'));
+        const btn = document.querySelector(`.play_song_btn[data-id="${id}"]`);
         if (btn) btn.closest('tr').classList.add('active');
     }
 }
@@ -142,31 +142,31 @@ const format_time = (seconds) => {
 };
 
 //loads all songs
-async function loadSongsFromDB() {
+async function load_songs_from_db() {
     const songs = await db.songs.toArray();
     for (const song of songs) {
         const dur = song.duration ? format_time(song.duration) : '--:--';
-        addSongToList(song.id, song.title, dur);
+        add_song_to_list(song.id, song.title, dur);
     }
 }
 
-loadSongsFromDB();
+load_songs_from_db();
 
 //when user uploads a file
 audio_upload.addEventListener('change', async () => {
     if (audio_upload.files.length > 0) {
         const file = audio_upload.files[0];
-        const fullName = file.name;
-        const nameWithoutExt = fullName.replace(/\.[^/.]+$/, "");
+        const full_name = file.name;
+        const name_without_ext = full_name.replace(/\.[^/.]+$/, "");
 
-        const fileDuration = await getDuration(file);
-        const id = await storeMp3(nameWithoutExt, file, fileDuration);
+        const file_duration = await get_duration(file);
+        const id = await store_mp3(name_without_ext, file, file_duration);
 
-        addSongToList(id, nameWithoutExt, format_time(fileDuration));
+        add_song_to_list(id, name_without_ext, format_time(file_duration));
 
         //set it as current song
         audio_player.src = URL.createObjectURL(file);
-        audio_upload_label.textContent = nameWithoutExt;
+        audio_upload_label.textContent = name_without_ext;
     }
 });
 

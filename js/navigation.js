@@ -15,9 +15,9 @@ const about = document.getElementById('about');
 const nav_buttons = [library_button, playlist_button, about_button];
 
 // changes active button
-function setActiveNav(activeBtn) {
+function set_active_nav(active_btn) {
     nav_buttons.forEach(btn => btn.classList.remove('active'));
-    activeBtn.classList.add('active');
+    active_btn.classList.add('active');
 }
 
 //library button click
@@ -26,7 +26,7 @@ library_button.addEventListener('click', () => {
     playlist.style.display = "none";
     about.style.display = "none";
     audio_box.style.display = "flex";
-    setActiveNav(library_button);
+    set_active_nav(library_button);
 });
 
 // playlist button click
@@ -35,7 +35,7 @@ playlist_button.addEventListener('click', () => {
     library.style.display = "none";
     about.style.display = "none";
     audio_box.style.display = "flex";
-    setActiveNav(playlist_button);
+    set_active_nav(playlist_button);
 });
 
 //about button click
@@ -44,5 +44,5 @@ about_button.addEventListener('click', () => {
     playlist.style.display = "none";
     library.style.display = "none";
     audio_box.style.display = "none";
-    setActiveNav(about_button);
+    set_active_nav(about_button);
 });
