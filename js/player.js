@@ -1,5 +1,5 @@
 
-// Music Player, Dexie, Uplaod Talbe JS For Turkey Music
+// Music Player, Dexie, Upload Table JS For Turkey Music
 // File : player.js
 // Author : Liam Turley
 // Date : 15/05/2026

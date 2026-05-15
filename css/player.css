@@ -105,14 +105,14 @@ Date : 15/05/2026 */
 }
 
 /* volume controls group */
-.volume-group {
+.volume_group {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 /* volume icon */
-.volume-icon {
+.volume_icon {
   color: #5A6478;
   display: flex;
 }

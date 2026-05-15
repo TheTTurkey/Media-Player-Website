@@ -96,10 +96,10 @@ Date : 15/05/2026
                 <table id="music_table">
                     <thead>
                         <tr>
-                            <th class="col-icon"></th>
-                            <th class="col-name">Name</th>
-                            <th class="col-duration">Duration</th>
-                            <th class="col-action">Action</th>
+                            <th class="col_icon"></th>
+                            <th class="col_name">Name</th>
+                            <th class="col_duration">Duration</th>
+                            <th class="col_action">Action</th>
                         </tr>
                     </thead>
                     <tbody id="music_list">
@@ -107,8 +107,8 @@ Date : 15/05/2026
                 </table>
 
                 <!-- No Table Icon  -->
-                <div class="empty-state" id="library_empty_state">
-                    <div class="empty-state-icon">
+                <div class="empty_state" id="library_empty_state">
+                    <div class="empty_state_icon">
                         <!-- Music Icon SVG -->
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#63B3ED"
                             stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -130,9 +130,9 @@ Date : 15/05/2026
     <div id="about">
         <div id="main">
             <h1>About</h1>
-            <div class="about-content">
+            <div class="about_content">
                 <!-- About Text  -->
-                <div class="about-text">
+                <div class="about_text">
                     <p>Turkey Music is a simple music player built with HTML, CSS, and JavaScript. It allows users to
                         upload
                         their own music files and create playlists. The player features basic controls such as play,
@@ -141,7 +141,7 @@ Date : 15/05/2026
                         their music collection.</p>
                 </div>
                 <!-- BootStrap Carousel -->
-                <div class="about-carousel">
+                <div class="about_carousel">
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -222,10 +222,10 @@ Date : 15/05/2026
                     <table id="playlist_table">
                         <thead>
                             <tr>
-                                <th class="col-icon"></th>
-                                <th class="col-name">Name</th>
-                                <th class="col-duration">Songs</th>
-                                <th class="col-action">Action</th>
+                                <th class="col_icon"></th>
+                                <th class="col_name">Name</th>
+                                <th class="col_duration">Songs</th>
+                                <th class="col_action">Action</th>
                             </tr>
                         </thead>
                         <tbody id="playlist_table_body">
@@ -233,8 +233,8 @@ Date : 15/05/2026
                     </table>
 
                     <!-- No Playlist Icon -->
-                    <div class="empty-state" id="playlist_empty_state">
-                        <div class="empty-state-icon">
+                    <div class="empty_state" id="playlist_empty_state">
+                        <div class="empty_state_icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#63B3ED"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path
@@ -275,10 +275,10 @@ Date : 15/05/2026
                     <table id="playlist_song_table">
                         <thead>
                             <tr>
-                                <th class="col-icon"></th>
-                                <th class="col-name">Name</th>
-                                <th class="col-duration">Duration</th>
-                                <th class="col-action">Action</th>
+                                <th class="col_icon"></th>
+                                <th class="col_name">Name</th>
+                                <th class="col_duration">Duration</th>
+                                <th class="col_action">Action</th>
                             </tr>
                         </thead>
                         <tbody id="playlist_song_list">
@@ -286,8 +286,8 @@ Date : 15/05/2026
                     </table>
 
                     <!-- No Songs in Playlist -->
-                    <div class="empty-state" id="playlist_song_empty">
-                        <div class="empty-state-icon">
+                    <div class="empty_state" id="playlist_song_empty">
+                        <div class="empty_state_icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#63B3ED"
                                 stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M9 18V5l12-2v13" />
@@ -305,8 +305,8 @@ Date : 15/05/2026
 
     <!-- Add Song to Playlist Modal -->
     <div id="add_song_modal" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header">
+        <div class="modal_content">
+            <div class="modal_header">
                 <h3>Add Songs</h3>
                 <button id="add_song_modal_close">✕</button>
             </div>
@@ -335,8 +335,8 @@ Date : 15/05/2026
         <input type="range" id="progress_bar" max="100" value="0">
 
         <!-- Volume Contorl  -->
-        <div class="volume-group">
-            <span class="volume-icon" id="volume_icon" title="Mute/Unmute">
+        <div class="volume_group">
+            <span class="volume_icon" id="volume_icon" title="Mute/Unmute">
                 <!-- Music Icon SVG  -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

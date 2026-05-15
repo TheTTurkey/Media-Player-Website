@@ -38,7 +38,7 @@ Date : 15/05/2026 */
 }
 
 /* empty state when no songs or playlists */
-.empty-state {
+.empty_state {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +46,7 @@ Date : 15/05/2026 */
 }
 
 /* empty state icon circle */
-.empty-state-icon {
+.empty_state_icon {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -58,20 +58,20 @@ Date : 15/05/2026 */
   margin-bottom: 24px;
 }
 
-.empty-state-icon svg {
+.empty_state_icon svg {
   width: 36px;
   height: 36px;
 }
 
 /* empty state text */
-.empty-state h3 {
+.empty_state h3 {
   color: #E8ECF4;
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
-.empty-state p {
+.empty_state p {
   color: #5A6478;
   font-size: 0.85rem;
   padding: 0;
@@ -94,12 +94,12 @@ Date : 15/05/2026 */
 }
 
 /* show table when it has songs */
-#music_table.has-songs {
+#music_table.has_songs {
   display: table;
 }
 
 /* hide empty state when table has songs */
-#music_table.has-songs ~ .empty-state {
+#music_table.has_songs ~ .empty_state {
   display: none;
 }
 
@@ -119,17 +119,17 @@ Date : 15/05/2026 */
 }
 
 /* column widths */
-#music_table th.col-icon { width: 48px; }
-#music_table th.col-duration { width: 90px; text-align: center; }
-#music_table th.col-action { width: 100px; text-align: center; }
+#music_table th.col_icon { width: 48px; }
+#music_table th.col_duration { width: 90px; text-align: center; }
+#music_table th.col_action { width: 100px; text-align: center; }
 
 /*active row highlight */
-.music-row.active {
+.music_row.active {
   background: rgba(99, 179, 237, 0.08);
 }
 
 /* table row cells */
-.music-row td {
+.music_row td {
   padding: 12px 16px;
   border-bottom: 1px solid rgba(99, 179, 237, 0.05);
   color: #E8ECF4;
@@ -137,23 +137,23 @@ Date : 15/05/2026 */
 }
 
 /* icon column */
-.music-row td.col-icon { text-align: center; }
-.music-row td.col-icon svg { display: block; margin: 0 auto; }
+.music_row td.col_icon { text-align: center; }
+.music_row td.col_icon svg { display: block; margin: 0 auto; }
 
 /* song name column */
-.music-row td.col-name {
+.music_row td.col_name {
   font-weight: 500;
 }
 
 /* duration column */
-.music-row td.col-duration {
+.music_row td.col_duration {
   text-align: center;
   color: #8B95A8;
   font-size: 0.75rem;
 }
 
 /* action buttons column */
-.music-row td.col-action {
+.music_row td.col_action {
   text-align: center;
   display: flex;
   gap: 8px;
@@ -162,7 +162,7 @@ Date : 15/05/2026 */
 }
 
 /*play button in table */
-.play-song-btn {
+.play_song_btn {
   background: transparent;
   border: 1.5px solid #63B3ED;
   color: #63B3ED;
@@ -178,13 +178,13 @@ Date : 15/05/2026 */
 }
 
 /* active row play button fills in */
-.music-row.active .play-song-btn {
+.music_row.active .play_song_btn {
   background: #63B3ED;
   color: #0B0E14;
 }
 
 /* delete button in table */
-.delete-song-btn {
+.delete_song_btn {
   background: transparent;
   border: 1.5px solid #F56565;
   color: #F56565;
@@ -200,14 +200,14 @@ Date : 15/05/2026 */
 }
 
 /* remove border on last row */
-.music-row:last-child td { border-bottom: none; }
+.music_row:last-child td { border-bottom: none; }
 
 /*playlist and about page display */
 #playlist { display: none; min-height: 100vh; }
 #about { min-height: 100vh; display: none; }
 
 /* about page layout */
-.about-content {
+.about_content {
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
@@ -215,7 +215,7 @@ Date : 15/05/2026 */
 }
 
 /* about text box */
-.about-text {
+.about_text {
   flex: 1 1 300px;
   background: #161C28;
   border: 1px solid rgba(99, 179, 237, 0.15);
@@ -223,14 +223,14 @@ Date : 15/05/2026 */
   padding: 32px;
 }
 
-.about-text p {
+.about_text p {
   padding: 0;
   color: #8B95A8;
   line-height: 1.8;
 }
 
 /*carousel container */
-.about-carousel { flex: 1 1 300px; }
+.about_carousel { flex: 1 1 300px; }
 
 /* carousel images */
 .carousel-item img {
@@ -280,14 +280,14 @@ Date : 15/05/2026 */
 }
 
 /* show playlist table when has songs */
-#playlist_table.has-songs,
-#playlist_song_table.has-songs {
+#playlist_table.has_songs,
+#playlist_song_table.has_songs {
   display: table;
 }
 
 /*hide empty state when table showing */
-#playlist_table.has-songs ~ .empty-state,
-#playlist_song_table.has-songs ~ .empty-state {
+#playlist_table.has_songs ~ .empty_state,
+#playlist_song_table.has_songs ~ .empty_state {
   display: none;
 }
 
@@ -308,12 +308,12 @@ Date : 15/05/2026 */
 }
 
 /*playlist table column widths */
-#playlist_table th.col-icon,
-#playlist_song_table th.col-icon { width: 48px; }
-#playlist_table th.col-duration,
-#playlist_song_table th.col-duration { width: 90px; text-align: center; }
-#playlist_table th.col-action,
-#playlist_song_table th.col-action { width: 100px; text-align: center; }
+#playlist_table th.col_icon,
+#playlist_song_table th.col_icon { width: 48px; }
+#playlist_table th.col_duration,
+#playlist_song_table th.col_duration { width: 90px; text-align: center; }
+#playlist_table th.col_action,
+#playlist_song_table th.col_action { width: 100px; text-align: center; }
 
 /* Create Playlist Form */
 #create_playlist_form {
@@ -408,7 +408,7 @@ Date : 15/05/2026 */
 }
 
 /* modal box */
-.modal-content {
+.modal_content {
   background: #161C28;
   border: 1px solid rgba(99, 179, 237, 0.2);
   border-radius: 16px;
@@ -419,7 +419,7 @@ Date : 15/05/2026 */
 }
 
 /*modal header with title and close button */
-.modal-header {
+.modal_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -427,7 +427,7 @@ Date : 15/05/2026 */
   border-bottom: 1px solid rgba(99, 179, 237, 0.1);
 }
 
-.modal-header h3 {
+.modal_header h3 {
   color: #E8ECF4;
   font-size: 1.1rem;
   font-weight: 700;
@@ -435,7 +435,7 @@ Date : 15/05/2026 */
 }
 
 /* close button */
-.modal-header button {
+.modal_header button {
   background: transparent;
   border: none;
   color: #5A6478;
@@ -445,7 +445,7 @@ Date : 15/05/2026 */
 }
 
 /* each song item in the modal */
-.modal-song-item {
+.modal_song_item {
   display: flex;
   align-items: center;
   padding: 12px 24px;
@@ -454,16 +454,16 @@ Date : 15/05/2026 */
 }
 
 /* greyed out if already added */
-.modal-song-item.already-added {
+.modal_song_item.already_added {
   opacity: 0.5;
 }
 
-.modal-song-icon {
+.modal_song_icon {
   flex-shrink: 0;
 }
 
 /* song name in modal */
-.modal-song-name {
+.modal_song_name {
   flex: 1;
   color: #E8ECF4;
   font-size: 0.85rem;
@@ -471,7 +471,7 @@ Date : 15/05/2026 */
 }
 
 /* add button in modal */
-.modal-add-btn {
+.modal_add_btn {
   background: rgba(99, 179, 237, 0.1);
   color: #90CDF4;
   border: 1px solid rgba(99, 179, 237, 0.3);
@@ -483,13 +483,13 @@ Date : 15/05/2026 */
   font-family: 'Inter', sans-serif;
 }
 
-.modal-add-btn:disabled {
+.modal_add_btn:disabled {
   cursor: default;
   opacity: 0.6;
 }
 
 /* empty modal message */
-.modal-empty {
+.modal_empty {
   color: #5A6478;
   text-align: center;
   padding: 32px 24px;
@@ -499,8 +499,8 @@ Date : 15/05/2026 */
 /* mobile responsive */
 @media (max-width: 600px) {
   #main h1 { font-size: 2rem; padding: 16px; }
-  .about-content { flex-direction: column; }
+  .about_content { flex-direction: column; }
   .carousel-item img { height: 250px; }
   #create_playlist_form { flex-wrap: wrap; }
-  .modal-content { width: 95%; }
+  .modal_content { width: 95%; }
 }
